@@ -15,8 +15,9 @@ public class ZileCurs {
         Scanner sc = new Scanner(System.in);
         System.out.println("Inrodu ziua ");
         String day = sc.nextLine();
+        // String day = sc.nextLine().to.LowerCase();
         switch (day) {
-            case "MON":
+            case "duminica":
                 System.out.println("MON, WED, FRI");
                 break;
             case "TUE":
