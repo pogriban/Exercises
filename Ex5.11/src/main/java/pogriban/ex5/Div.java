@@ -12,7 +12,6 @@ public class Div {
         System.out.println("introdu numarul ");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        //System.out.println(a);
         int b = 0, c = 0;
         for (int i = 0; i < a; i++) {
             ++b; //System.out.println (b);
