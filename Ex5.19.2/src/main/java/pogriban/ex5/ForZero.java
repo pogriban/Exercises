@@ -11,25 +11,19 @@ import java.util.Scanner;
  *
  * @author ThinkPad
  */
-public class Main {
+public class ForZero {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introdu numarul ");
-        int a = 1;
 
-        int c = 0, b = 0, sum = 0;
-        while (a != 0) {
-
-            a = sc.nextInt();
-            c++;
-            //b=a;
-            sum = sum + a;
+        for (;;) {
+            System.out.println("Introdu numarul ");
+            int a = sc.nextInt();
+            if (a == 0) {
+                break;
+            }
         }
-        // System.out.println(a);
-        System.out.println("Numarul de cifre" + c);
-        System.out.println("Suma " + (sum - 1));
-
+        System.out.println("A fost introdus numarul 0 ");
     }
 
 }
