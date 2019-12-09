@@ -23,6 +23,7 @@ public class ForZero {
                 break;
             }
         }
+        
         System.out.println("A fost introdus numarul 0 ");
     }
 
