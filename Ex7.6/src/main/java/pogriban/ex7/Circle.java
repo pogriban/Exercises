@@ -14,9 +14,6 @@ public class Circle {
     int radius;
     double area;
 
-    public Circle() {
-        this.area = 0.0d;
-    }
     void calcAria(){
     area  = 3.14 * radius * radius;
 

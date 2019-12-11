@@ -10,6 +10,7 @@ package pogriban.ex7;
  * @author ThinkPad
  */
 public class Shape {
-    int instance;
+    Rectangle rectangle=new Rectangle();
+    Circle cerc=new Circle();
     
 }

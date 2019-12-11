@@ -11,11 +11,11 @@ package pogriban.ex7;
  */
 public class Rectangle {
 
-    int length;
-    int width;
-    int option=0;
+    int length;//atribut
+    int width;//atribut
+    int option=0;//atribut
 
-    void calcArea() {
+    void calcArea() {  //metoda
         int area = 0;
         area = length * width;
         System.out.println("Aria " + area);

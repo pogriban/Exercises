@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Rectangle aria = new Rectangle();
+        Rectangle aria = new Rectangle();//aria obiect instanta
         {
             System.out.println("Introduceti lungimea");
             Scanner sc = new Scanner(System.in);
