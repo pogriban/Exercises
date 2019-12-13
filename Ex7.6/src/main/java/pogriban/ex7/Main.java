@@ -19,12 +19,12 @@ public class Main {
         drept.width=3;
         drept.calcPerim();
 */
-       Shape rotund=new Shape();
-       rotund.cerc.radius=3;
-       rotund.cerc.calcAria();
-       rotund.rectangle.length=2;
-       rotund.rectangle.width=3;
-       rotund.rectangle.calcPerim();
+       Shape shapeObject=new Shape();
+       shapeObject.cerc.radius=3;
+       shapeObject.cerc.calcAria();
+       shapeObject.rectangle.length=2;
+       shapeObject.rectangle.width=3;
+       shapeObject.rectangle.calcPerim();
 }
 
     

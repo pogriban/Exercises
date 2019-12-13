@@ -13,10 +13,11 @@ public class Main {
     public static void main(String args[]){
         Tablou calcule=new Tablou();
         
-    calcule.array=new int[]{1,2,3,4,5,6,7,8,9,8};
+    calcule.items=new int[]{1,2,3,4,5,6,7,8,9,8};
     calcule.suma();
     calcule.media();
     calcule.numPar();
+    calcule.lung();
         
     }
     
