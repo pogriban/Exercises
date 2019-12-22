@@ -5,6 +5,8 @@
  */
 package pogriban.ex6;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ThinkPad
@@ -12,7 +14,16 @@ package pogriban.ex6;
 public class Grid {
     public static void main(String args[]){
         
-        
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.println("Introduceti numar de coloane si rinduri: ");
+        n = sc.nextInt();
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                System.out.print("- ");
+            }
+            System.out.println();
+        }
     }
     
 }
