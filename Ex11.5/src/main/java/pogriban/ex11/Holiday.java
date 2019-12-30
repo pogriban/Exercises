@@ -21,7 +21,7 @@ public class Holiday {
         month = m;
     }
 
-    public static boolean inSameMonth() {
+    /*public static boolean inSameMonth() {
         boolean w;
         Holiday q = new Holiday("AnulNou", 1, "ianuarie");
         Holiday q2 = new Holiday("Craciun Vechi", 7, "ianuarie");
@@ -30,8 +30,9 @@ public class Holiday {
         } else {
             w = false;
         }
-        return w;
-
+        return w;*/
+    boolean inSameMonth(Holiday i) {
+return i.mont
     }
 
     public static double avgDate(int... dayi) {
