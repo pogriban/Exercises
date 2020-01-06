@@ -30,6 +30,7 @@ public class Main {
         System.out.print(w.trim());
         System.out.println(":");
         
+        
     }
     //swing
 

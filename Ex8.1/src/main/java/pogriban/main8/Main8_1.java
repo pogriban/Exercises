@@ -15,14 +15,14 @@ public class Main8_1 {
         String a = "tRue";
         String a1 = "120";
         String a2 = "32000";
-        String a3 = "147895632";
+        String a3 = "14";
         String a4 = "987654321987654321";
         String a5 = "4444.5d";
         String a6 = "2354.56f";
         Boolean b = new Boolean(a);
         Boolean b7 = true;//alocare autoboxing
         Byte b8 = 80;
-        Character char1 = 'a';
+        Character char1 = '3';
         Byte b1 = new Byte(a1); //cu ajutorul constructorului
         Byte b9 = new Byte((byte) 90);
         byte c1 = Byte.parseByte(a1);
