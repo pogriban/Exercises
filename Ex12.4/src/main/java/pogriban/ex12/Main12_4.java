@@ -16,7 +16,7 @@ public class Main12_4 {
         StringBuilder a = new StringBuilder("Hello");
         System.out.println(a.append("people"));
         String q = "moon@";
-        StringBuilder x1 = new StringBuilder("1abv4jhr2jk1nm6");
+        String x1 ="abv4jhr2jknm6";
         String c = "welllcommmmeee";
         StringBuilder zz=new StringBuilder("it is a string");
         System.out.println(index(q));
@@ -24,7 +24,7 @@ public class Main12_4 {
         System.out.println();
         System.out.println(c+" "+compare(c));
         replace(zz);
-        sum(x1);
+        System.out.println(sum(x1));
     }
     static void welcome(StringBuilder d) {
         System.out.println(d);
@@ -59,21 +59,32 @@ public class Main12_4 {
       System.out.println(z.insert(is+3, "not ", 0, 4));
      
      }
-      static void sum(StringBuilder xx){
-          int p=0;
+    /*  static void sum(StringBuilder xx){
+          char [] p=xx.to;
           char []qw={'1','2','3','4','5','6','7','8','9'};
           for (int i = 0; i < xx.length(); i++) {
-              for(int j=0; j<qw.length;j++)
+              for(int j=0; j<qw.length;j++){
             //if ((xx.charAt(i)!=1)&&(xx.charAt(i)!=2)&&(xx.charAt(i)!=3)&&(xx.charAt(i)!=4)&&(xx.charAt(i)!=5)&&(xx.charAt(i)!=6)&&(xx.charAt(i)!=7)&&(xx.charAt(i)!=8)&&(xx.charAt(i)!=9) ){
-            if (xx.charAt(i)!=qw[j]) 
+            if (qw[j]==xx.charAt(i)) 
                 
-            System.out.println(xx.replace(i, i+1, "0"));
+           xx.replace(i, i+1, "0");
             
           
+              }
       }
           
          System.out.println(xx);
           //return p;
+    }*/
+    static int sum(String s) {
+        char[] a = s.toCharArray();
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] >= '0' && a[i] <= '9') {
+                sum += Integer.parseInt(String.valueOf(a[i]));
+            }
+        }
+        return sum;
     }
 }
 
