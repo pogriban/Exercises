@@ -1,0 +1,437 @@
+
+
+/******************
+////Ex13.1
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_1;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        ArrayList <String> al = new ArrayList<String>();
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i < 5; i++){
+            al.add(sc.next());
+        }
+        
+        System.out.println("For loop");
+        for(int i = 0; i < 5; i++){
+            System.out.println(al.get(i));
+        }
+        
+        System.out.println("Enhanced for loop");
+        for(String var : al){
+            System.out.println(var);
+        }
+        
+        System.out.println("Iterator");
+        ListIterator<String> li = al.listIterator();
+        while(li.hasNext()){
+            System.out.println(li.next());
+        }
+        
+        System.out.println("While loop");
+        int i = 0;
+        while(i < 5){
+            System.out.println(al.get(i));
+            i++;
+        }
+    }
+}
+/**************************/
+////////////Ex13.2
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_2;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        ArrayList <String> al = new ArrayList<>();
+        
+        
+        System.out.println("Introduceti datele: ");
+        for(int i = 0; i < 5; i++){
+            al.add(sc.next());
+        }
+        
+        ArrayList <String> al_clone = new ArrayList<String>(al);
+        
+        al_clone.clear();
+        System.out.println("List empty "+ al_clone);
+        
+        al_clone = new ArrayList<String>(al);
+        
+        System.out.println("Comparare: ");
+        System.out.println(al +"\n"+al_clone);
+        System.out.println(al.equals(al_clone));
+        
+        System.out.println("Introduceti alt element pentru pozitia a 2: ");
+        al_clone.set(1,sc.next());
+        System.out.println("List modified: " + al_clone);
+        
+        System.out.println("removePlurals: ");        
+        removePlurals(al_clone);
+        
+        System.out.println("reverse: "); 
+        reverse(al);
+        
+        System.out.println("Comparare: ");
+        System.out.println(al +"\n"+al_clone);
+        System.out.println(al.equals(al_clone));
+    }
+    
+    private static void removePlurals(ArrayList<String> al_clone1){
+        int i = 0;
+        
+        do{
+            String str1 = al_clone1.get(i).toLowerCase();
+            if(i < al_clone1.size()){
+                if(!str1.endsWith("s")){                   
+                      i++; 
+                }else{
+                    al_clone1.remove(i);                                
+                }
+            }else{
+                break;
+            }
+          System.out.println(al_clone1);   
+        }while(i <al_clone1.size());
+    }
+    
+    private static void reverse(ArrayList<String> al_clone1){
+        StringBuffer str = new StringBuffer();
+        ArrayList <String> al_reverse = new ArrayList<String>();
+        for(int i =0; i < al_clone1.size(); i++){
+            str.append(al_clone1.get(i));
+            str.append(" ");
+            al_reverse.add(str.reverse().toString());
+            str.delete(0, str.length());
+        }
+        System.out.println(al_reverse);
+    }
+            
+}
+
+/*************************/
+/////////Ex13.3
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_3;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        ArrayList <String> al = new ArrayList<>();
+        int i = 0;
+        System.out.println("Introduceti lungimea listului: ");
+        int a = sc.nextInt();
+        System.out.println("Introduceti datele: ");
+        while(i< a){
+            al.add(sc.next());
+            i++;
+        }
+//        
+        pairs(al, a);
+    }
+    
+    /**
+     *
+     * @param al1
+     */
+    public static void pairs(ArrayList<String> al1, int a){
+        ArrayList <String> al_clone = new ArrayList<>(a);
+       int b;
+       if(a%2 == 0){
+           b = a;
+           for(int i = 0; i < b; i +=2){
+                al_clone.add(i, al1.get(i+1)); 
+                al_clone.add(i+1, al1.get(i));
+            }
+       }else{
+           b = a;
+           for(int i = 0; i < b-1; i +=2){
+                al_clone.add(i, al1.get(i+1)); 
+                al_clone.add(i+1, al1.get(i));
+            }
+           al_clone.add(b-1, al1.get(b-1));
+       }
+        
+        System.out.println(al_clone.toString());
+    }
+}
+/*******************/
+/////////////Ex13.4
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Introduceti lungimea: ");
+        int a = sc.nextInt();
+        ArrayList<String> al = new ArrayList<>();
+        
+        System.out.println("Introduceti elemente: ");
+        for(int i = 0; i < a; i++){
+            al.add(sc.next());
+        }
+        
+        markLength4(al);
+    }
+    
+    private static void markLength4(ArrayList<String> al1){
+        StringBuilder sb = new StringBuilder();
+        ArrayList<String> al2 = new ArrayList<>(al1.size());
+        for(int i = 0; i < al1.size(); i++){
+            if(al1.get(i).length() == 4){
+                al2.add(sb.append("****").append(al1.get(i)).toString());
+                sb.delete(0, sb.length());
+            }else{
+                al2.add(al1.get(i));
+            }
+        }
+        System.out.println(al2);
+    }
+}
+/******************************************************/
+////////////////Ex13.5
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_5;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Introduceti lungimea: ");
+        int a = sc.nextInt();
+        ArrayList<String> al = new ArrayList<>();
+        
+        System.out.println("Introduceti elemente: ");
+        for(int i = 0; i < a; i++){
+            al.add(sc.next());
+        }
+        
+        addStars(al);
+    }
+    
+    private static void addStars(ArrayList<String> al1){
+        ArrayList<String> al2 = new ArrayList<>(al1.size());
+        for(int i = 0; i < al1.size(); i++){
+            al2.add("*");
+            al2.add(al1.get(i));
+        }
+        System.out.println(al2);
+    }
+}
+//////////////////////Ex13.6
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_6;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Introduceti lungimea list 1: ");
+        int a = sc.nextInt();
+        System.out.println("Introduceti lungimea list 2: ");
+        int b = sc.nextInt();
+        ArrayList<Integer> al_1 = new ArrayList<>();
+        ArrayList<Integer> al_2 = new ArrayList<>();
+        
+        System.out.println("Introduceti elemente list 1: ");
+        for(int i = 0; i < a; i++){
+            al_1.add(sc.nextInt());
+        }
+        
+        System.out.println("Introduceti elemente list 2: ");
+        for(int i = 0; i < b; i++){
+            al_2.add(sc.nextInt());
+        }
+        
+        intersect(al_1, al_2);
+    }
+    
+    private static void intersect(ArrayList<Integer> al1, ArrayList<Integer> al2){
+        ArrayList<Integer> al3 = new ArrayList<>();
+        for(int i = 0; i < al1.size(); i++){
+            for(int j = 0; j < al2.size(); j++){
+                if(al1.get(i) == al2.get(j)){
+                    al3.add(al1.get(i));
+                }
+            }
+        }
+        System.out.println(al3);
+    }
+/**********************************************************/
+//////////////////Ex13.7
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_7;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+/**
+ *
+ * @author treba
+ */
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        ArrayList <Employee> al_emp = new ArrayList <>();
+        System.out.println("Introduceti numar de lucratori: ");
+        int a = sc.nextInt();
+        for(int i = 0; i < a; i++){
+            al_emp.add(new Employee(sc.nextInt(), sc.next(), sc.nextDouble()));
+        }
+        System.out.println("Introduceti id lucratorului: ");
+        employee(sc.nextInt(), al_emp);
+        
+        System.out.println("Introduceti id lucratorului 1: ");
+        int b = sc.nextInt();
+        
+        System.out.println("Introduceti id lucratorului 2: ");
+        int c = sc.nextInt();
+        
+        System.out.println(compare(b,c, al_emp));
+    }
+    
+    private static void employee(int a, ArrayList<Employee> al){
+        System.out.println(al.get(a-1).getId()+" "+al.get(a-1).getName()+" "+al.get(a-1).getSalary());
+    }
+    
+    private static boolean compare(int a, int b, ArrayList<Employee> al){
+        
+        return al.get(a-1).equals(al.get(b-1));
+    }
+}
+///////si calsa
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ex13_7;
+
+/**
+ *
+ * @author treba
+ */
+public class Employee {
+    private int id;
+    private String name;
+    private double salary;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    
+    public boolean equals(Object anObject){
+        if(anObject instanceof Employee){
+            Employee e = (Employee) anObject;
+            return (name.equals(e.name) && salary == e.salary);
+        }else return false;
+    }
+}
+
+
+
