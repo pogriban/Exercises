@@ -9,20 +9,15 @@ package pogriban.ex15;
  *
  * @author ThinkPad
  */
-public class Rectangle extends Polygon {
-    public Rectangle(Point topRightCorner, int width, int height){
-        Point a=topRightCorner;
-        width =2;
-        height=2;
-        
-    }
-    public double getPerimeter (){
-        return 2*width+2*height;
+public class Square extends Rectangle {
+    public Square(Point topRigthCorner, int sideLength){
+        Point a=topRigthCorner;
+        sideLength=2;
     }
 
     @Override
     public String toString() {
-        return "Rectangle{" + '}';
+        return "Square{" + '}';
     }
     
 }

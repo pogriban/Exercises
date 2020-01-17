@@ -22,4 +22,10 @@ public class Shape {
     void move(int dx, int dy){
         
     }
+    public double getSurface(){
+    return 2-3;
+    }
+    public double getPerimeter(){
+        return 2-1;
+    }
 }

@@ -9,13 +9,15 @@ package pogriban.ex15;
  *
  * @author ThinkPad
  */
-public class Polygon {
+public class Polygon extends Shape{
     protected Point veritices[];
+    @Override
     public void move(int dx, int dy){
         
     }
+    @Override
     public double getPerimeter(){
-        return n*l;
+        return dx*dy;
     }
 
     @Override
