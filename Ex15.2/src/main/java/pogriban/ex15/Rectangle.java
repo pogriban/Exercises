@@ -11,18 +11,27 @@ package pogriban.ex15;
  */
 public class Rectangle extends Polygon {
     public Rectangle(Point topRightCorner, int width, int height){
-        Point a=topRightCorner;
-        width =2;
-        height=2;
+        Point topLeftCorner=new Point(topRightCorner.getX()-width, topRightCorner.getY());
+        Point bottomLeftCorner=new Point(topLeftCorner.getX(), topLeftCorner.getY()-height);
+        Point bottomRightCorner=new Point(bottomLeftCorner.getX()+width, bottomLeftCorner.getY()); 
+        veritices =new Point[4];
+        veritices[0]=topRightCorner;
+        veritices[1]=topLeftCorner;
+        veritices[2]=bottomLeftCorner;
+        veritices[3]=bottomRightCorner;
         
     }
+    @Override
     public double getPerimeter (){
-        return 2*width+2*height;
+        return super.getPerimeter();
+    }
+    @Override
+    public double getSurface(){
+        double width=veritices[1].determineTo(veritices[0]);
+        double height=veritices[0].determineTo(veritices[3]);
+        return width*height;
+        
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle{" + '}';
-    }
     
 }

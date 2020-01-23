@@ -5,23 +5,39 @@
  */
 package pogriban.ex15;
 
+import java.util.Arrays;
+
 /**
  *
  * @author ThinkPad
  */
-public class Polygon extends Shape{
+public abstract class Polygon extends Shape{
     protected Point veritices[];
     @Override
-    public void move(int dx, int dy){
+    public void move(double dx, double dy){
+        for(Point point: veritices){
+            point.move(dx, dy);
+        }
         
     }
     @Override
     public double getPerimeter(){
-        return dx*dy;
+        
+   double perimeter=0.0;
+       for (int i=0; i<veritices.length-2; i++){
+           double distance=veritices[i].determineTo(veritices[i+1]);
+        perimeter+=perimeter;
     }
+       perimeter+=veritices[veritices.length-1].determineTo(veritices[0]);
+       return perimeter;
+    }
+       
+    
 
     @Override
     public String toString() {
-        return "Polygon{" + "veritices=" + veritices + '}';
+        return "Polygon{" + "veritices=" + Arrays.toString(veritices) + '}';
     }
+
+   
 }

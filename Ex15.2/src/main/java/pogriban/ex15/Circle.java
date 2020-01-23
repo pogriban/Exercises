@@ -9,27 +9,35 @@ package pogriban.ex15;
  *
  * @author ThinkPad
  */
-public class Circle {
-    private Point point;
+public class Circle extends Shape{
+    private Point center;
     private int radius;
     public Circle(Point point, int radius){
-        this.point=point;
+        this.center=point;
         this.radius=radius;
     }
     public double getDiameter(){
         return 2*radius;
     }
-    public void move(int dx, int dy){}
-    public double getSurface(){
-        return 2*Math.PI*radius;
+    @Override
+    public void move(double dx, double dy){
+        //center.setX(center.getX()+dx);
+        //center.setY(center.getY()+dy);
+        center.move(dx, dy);
+        
     }
+    @Override
+    public double getSurface(){
+        return Math.PI*Math.pow(radius,2);
+    }
+    @Override
     public double getPerimeter(){
-        return Math.PI*Math.sqrt(radius);
+        return Math.PI*Math.pow(radius,2);
     }
 
     @Override
     public String toString() {
-        return "Circle{" + "point=" + point + ", radius=" + radius + '}';
+        return "Circle{" + "center=" + center + ", radius=" + radius + '}';
     }
     
 }

@@ -9,7 +9,7 @@ package pogriban.ex15;
  *
  * @author ThinkPad
  */
-public class Shape {
+public abstract class Shape {
     protected Color color;
 
     public Color getColor() {
@@ -19,13 +19,8 @@ public class Shape {
     public void setColor(Color color) {
         this.color = color;
     }
-    void move(int dx, int dy){
-        
-    }
-    public double getSurface(){
-    return 2-3;
-    }
-    public double getPerimeter(){
-        return 2-1;
-    }
+  public abstract void move(double dx, double dy);
+  
+    public abstract double getSurface();
+    public abstract  double getPerimeter();
 }

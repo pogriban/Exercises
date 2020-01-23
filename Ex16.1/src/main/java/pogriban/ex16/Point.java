@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pogriban.ex15;
+package pogriban.ex16;
 
 /**
  *
@@ -27,21 +27,8 @@ this(n, n);
 public Point() {
 this(0, 0);
 }
-public Point(Point p) {
-this(p.getX(), p.getY());
-}
-public void move(double dx, double dy) {
-setX(getX() + dx);
-setY(getY() + dy);
-}
 public void display() {
-System.out.println("< " + getX() + " ; " + getY() + " >");
-}
-public boolean isAtSamePosition(Point p) {
-return ((p.getX() == this.getX()) && (p.getY() == this.getY()));
-}
-public double determineTo(Point point){
- return Math.sqrt(Math.pow(point.getX()-this.x, 2)+ (Math.pow(point.getY()-this.y, 2)));
+System.out.println(this);
 }
 public String toString() {
 return ("< " + getX() + " ; " + getY() + " >");

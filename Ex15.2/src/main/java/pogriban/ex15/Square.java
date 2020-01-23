@@ -10,9 +10,8 @@ package pogriban.ex15;
  * @author ThinkPad
  */
 public class Square extends Rectangle {
-    public Square(Point topRigthCorner, int sideLength){
-        Point a=topRigthCorner;
-        sideLength=2;
+    public Square(Point topRightCorner, int sideLength){
+        super(topRightCorner, sideLength, sideLength);
     }
 
     @Override
